@@ -66,16 +66,16 @@
 
     <header>
         <h1>SoftDownload</h1>
-        <p>Ваш источник для скачивания программного обеспечения</p>
+        <p>Your source for software downloads</p>
     </header>
 
     <div id="searchForm">
-        <input type="text" id="searchInput" placeholder="Поиск по файлам">
-        <button id="searchButton" onclick="searchFiles()">Найти</button>
+        <input type="text" id="searchInput" placeholder="Type to search">
+        <button id="searchButton" onclick="searchFiles()">Search</button>
     </div>
 
     <section id="fileList">
-        <!-- Здесь будет отображаться список файлов -->
+        <!-- A list of files will be displayed here -->
     </section>
 
     <footer>
@@ -83,21 +83,21 @@
     </footer>
 
     <script>
-        // GitHub репозиторий
+        // GitHub repo owner
         const repoOwner = 'imguest24897';
         const repoName = 'SoftDownload';
 
-        // Функция для получения списка файлов из репозитория
+        // Function to get a list of files from a repository
         async function getFilesList() {
             try {
                 const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents`);
                 if (!response.ok) {
-                    throw new Error('Не удалось получить список файлов. Возможно, сервер временно не доступен.');
+                    throw new Error('Failed to get list of files. The server may be temporarily unavailable.');
                 }
                 const data = await response.json();
                 return data;
             } catch (error) {
-                throw new Error('Не удалось получить список файлов. Возможно, сервер временно не доступен.');
+                throw new Error('Error');
             }
         }
 
@@ -122,14 +122,14 @@
                     }
                 });
 
-                fileListSection.innerHTML = ''; // Очищаем предыдущий список перед добавлением нового
+                fileListSection.innerHTML = ''; // Clearing the previous list before adding a new one
                 fileListSection.appendChild(ul);
             } else {
-                fileListSection.textContent = 'Файлы не найдены.';
+                fileListSection.textContent = 'No files found.';
             }
         }
 
-        // Функция для поиска файлов по введенному запросу
+        // Function for searching files by entered query
         async function searchFiles() {
             const searchInput = document.getElementById('searchInput');
             const searchTerm = searchInput.value.toLowerCase();
@@ -141,7 +141,7 @@
             }
         }
 
-        // Вызываем функцию при загрузке страницы
+        // Call the function when the page loads
         getFilesList()
             .then(filesList => displayFiles(filesList))
             .catch(error => {
