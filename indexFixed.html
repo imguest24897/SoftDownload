@@ -57,8 +57,18 @@
         }
 
         #searchButton {
-            padding: 5px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-image: linear-gradient(to right, #007bff, #0056b3);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -116,7 +126,7 @@
                 const ul = document.createElement('ul');
 
                 files.forEach(file => {
-                    // Исключаем .html и .md файлы
+                    // Excluding .html and .md files
                     if (!file.name.endsWith('.html') && !file.name.endsWith('.md')) {
                         const li = document.createElement('li');
                         const link = document.createElement('a');
