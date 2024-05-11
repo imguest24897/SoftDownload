@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting</title>
+    <style>
+        /* General body styles including font, margins, and background */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        /* Container styling for the content with shadow and rounded corners */
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        /* Paragraph styling for clear readability */
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        /* Button styling with gradient, shadow, and transition effects */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-image: linear-gradient(to right, #007bff, #0056b3);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        /* Hover effect for the button for an interactive feel */
+        .button:hover {
+            background-image: linear-gradient(to right, #0056b3, #004089);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <script>
+        // JavaScript to handle the redirection after 1 second
+        setTimeout(function() {
+            window.location.href = "indexFixed.html";
+        }, 1000); // 1000 milliseconds = 1 second
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecting to Main Page</h1>
+        <!-- Countdown message indicating redirection -->
+        <p>Redirecting in 1 second...</p>
+        <!-- Manual redirection link if not automatically redirected -->
+        <p>Not redirected?</p>
+        <a href="indexFixed.html" class="button">Go to main page</a>
+    </div>
+</body>
+</html>
