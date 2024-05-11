@@ -39,23 +39,24 @@
         }
 
         button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
+            display: inline-block;
             padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
+            color: white;
+            background-image: linear-gradient(to right, #007bff, #0056b3);
+            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="emoji">🚧</div>
+        <div class="emoji">⚠️</div>
         <h1>Servers are closed</h1>
         <p>Sorry for the inconvenience, but the servers are currently undergoing maintenance. Please come back later.</p>
         <button onclick="goBack()">Back</button>
